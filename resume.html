@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Resume | Isaac Olaniyi</title>
+<link rel="stylesheet" href="css/style.css" />
+<style>
+  #resume-container{max-width:820px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:56px 60px;}
+  .resume-header{text-align:center;margin-bottom:2em;border-bottom:2px solid var(--line);padding-bottom:1.6em;}
+  .resume-header h1{font-size:2.1em;}
+  .resume-header .title{font-size:1.05em;color:var(--slate-light);margin:.4em 0 1em;font-weight:500;}
+  .resume-header .contact-info{font-size:.85em;color:var(--slate-light);display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+  .resume-header .contact-info a{color:var(--teal-dark);font-weight:600;}
+  .resume-section{margin-bottom:2.2em;}
+  .resume-section h2{font-size:1.15em;color:var(--teal-dark);border-bottom:1px solid var(--line-soft);padding-bottom:.5em;margin-bottom:1em;
+    font-family:'JetBrains Mono',monospace;letter-spacing:.04em;text-transform:uppercase;font-weight:600;}
+  .resume-item{margin-bottom:1.4em;}
+  .resume-item-header{display:flex;justify-content:space-between;align-items:baseline;gap:1em;flex-wrap:wrap;}
+  .resume-item h3{margin:0;font-size:1.02em;color:var(--ink);}
+  .resume-item .dates{font-size:.85em;color:var(--slate-light);font-family:'JetBrains Mono',monospace;}
+  .resume-item .subtitle{font-size:.9em;color:var(--slate-light);font-style:italic;margin-bottom:.4em;}
+  .resume-item ul{margin:.5em 0 0 1.3em;padding:0;}
+  .resume-item li{margin-bottom:.35em;color:var(--slate);line-height:1.65;font-size:.95em;}
+  .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2em;}
+  .skill-category strong{color:var(--ink);display:block;margin-bottom:.35em;font-size:.92em;}
+  .skill-category{font-size:.93em;color:var(--slate);}
+  .disclaimer{font-size:.85em;color:var(--slate-light);font-style:italic;margin-bottom:1em;}
+  .in-progress{font-family:'JetBrains Mono',monospace;font-size:.7em;letter-spacing:.05em;text-transform:uppercase;background:#FFF4E5;color:#9A5B00;padding:2px 8px;border-radius:999px;font-weight:600;margin-left:8px;vertical-align:middle;}
+  .download-section{text-align:center;margin-top:2.4em;padding-top:1.6em;border-top:1px solid var(--line);}
+  @media screen and (max-width:700px){
+    #resume-container{padding:34px 22px;}
+    .skills-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<nav id="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">I. <span>Olaniyi</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="resume.html" class="btn-pill current">Resume</a>
+    </div>
+  </div>
+</nav>
+
+<main class="section">
+  <div class="wrap">
+    <a href="index.html" class="back-link">← Home</a>
+
+    <div id="resume-container">
+      <div class="resume-header">
+        <h1>ISAAC OLANIYI</h1>
+        <div class="title">Data Analyst | SQL &amp; Python Focus</div>
+        <div class="contact-info">
+          <span><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> olaniyiisaac142@gmail.com</span>
+          <span><a href="https://github.com/isaacs-dev-01" target="_blank" rel="noopener">GitHub</a></span>
+          <span><a href="https://www.linkedin.com/in/isaac-olaniyi-bb84a8340" target="_blank" rel="noopener">LinkedIn</a></span>
+        </div>
+      </div>
+
+      <div class="resume-section">
+        <h2>Summary</h2>
+        <p style="font-size:.95em;">Data Analyst with a strong statistics foundation and core strengths in SQL and Python, covering the analytics workflow from data cleaning to dashboard reporting in Power BI and Excel. Nearly two years of self-directed practice with Excel, SQL, and Python, and about a year with Power BI and Tableau. Currently pursuing a BASc in Statistics at the Federal University of Technology Minna, and building cross-functional Agile experience through TechFleet.</p>
+      </div>
+
+      <div class="resume-section">
+        <h2>Experience</h2>
+        <div class="resume-item">
+          <div class="resume-item-header">
+            <h3>Data Analytics Volunteer, TrackPoli Project, TechFleet Community</h3>
+            <span class="dates">Joined Phase 3, Aug 2026</span>
+          </div>
+          <div class="subtitle">Project-Based Volunteer · Remote, International Team</div>
+          <ul>
+            <li>Joined TrackPoli, a Nigerian civic-tech election-tracking platform, in Phase 3 of its five-month build within an international, cross-functional Agile team.</li>
+            <li>Participate in sprint planning and product research, learning Agile practices through direct involvement in team ceremonies.</li>
+            <li>Practice FigJam-based collaborative wireframing and asynchronous, cross-time-zone team coordination.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="resume-section">
+        <h2>Analytical Projects</h2>
+        <p class="disclaimer">Independent practice projects built on public datasets, not client or employer work.</p>
+        <div class="resume-item">
+          <h3>Marketing Campaign A/B Test Evaluation</h3>
+          <div class="subtitle">MySQL · Python (pandas) · Chi-Square Testing · Power BI</div>
+          <ul>
+            <li>Cleaned and analyzed Kaggle's Marketing A/B Testing dataset (588,101 users) before running statistical tests.</li>
+            <li>Used a Chi-Square test to confirm a 43.14% lift in conversions over a no-ads control group (2.55% vs. 1.78%, p = 1.705 × 10⁻¹³).</li>
+            <li>Found a 12 PM–2 PM peak window and Monday as the top-converting day (231 orders) via SQL analysis.</li>
+            <li>Found converters saw far more ads on average (83.91 vs. 23.27), showing repeated exposure outperforms one-off ads.</li>
+          </ul>
+        </div>
+        <div class="resume-item">
+          <h3>Superstore Sales Performance &amp; Regional Profitability Analysis</h3>
+          <div class="subtitle">Power BI · Excel · Descriptive Statistics</div>
+          <ul>
+            <li>Cleaned and restructured four years (2023–2026) of Kaggle's Superstore dataset in Excel, building year-by-region breakdowns.</li>
+            <li>Found nearly identical discount rates across top- and bottom-performing regions, ruling out discounting as the driver of profitability.</li>
+            <li>Tracked sales share rising from 21% to 32%, tracing the West's $0.74M lead and South's $0.39M cap to operational factors.</li>
+            <li>Built an interactive Power BI dashboard (.pbix) with regional breakdowns and executive-ready recommendations.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="resume-section">
+        <h2>Education</h2>
+        <div class="resume-item">
+          <div class="resume-item-header">
+            <h3>Federal University of Technology Minna</h3>
+            <span class="dates">Nov 2024 – Sep 2029</span>
+          </div>
+          <div class="subtitle">Bachelor of Applied Science (BASc), Statistics <span class="in-progress">In Progress</span></div>
+        </div>
+        <div class="resume-item">
+          <div class="resume-item-header">
+            <h3>Cisco Networking Academy</h3>
+            <span class="dates">Aug 2026 – Present</span>
+          </div>
+          <div class="subtitle">Data Analytics Essentials <span class="in-progress">In Progress</span></div>
+        </div>
+      </div>
+
+      <div class="resume-section">
+        <h2>Certifications</h2>
+        <ul style="margin:0 0 0 1.3em;">
+          <li style="margin-bottom:.35em;font-size:.95em;">MySQL for Data Analytics and Business Intelligence, Udemy, 2026</li>
+          <li style="margin-bottom:.35em;font-size:.95em;">pandas Essential Training, LinkedIn Learning, 2026</li>
+          <li style="margin-bottom:.35em;font-size:.95em;">Excel: Managing and Analyzing Data, LinkedIn Learning, 2026</li>
+          <li style="margin-bottom:.35em;font-size:.95em;">Data Analytics for Business Professionals, LinkedIn Learning, 2026</li>
+        </ul>
+      </div>
+
+      <div class="resume-section" style="margin-bottom:0;">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <strong>Programming &amp; Databases</strong>
+            Python (pandas), SQL (MySQL Workbench)
+          </div>
+          <div class="skill-category">
+            <strong>Statistical Methods</strong>
+            Hypothesis Testing (Chi-Square), Descriptive Statistics, A/B Testing, Market Analysis
+          </div>
+          <div class="skill-category">
+            <strong>BI &amp; Reporting Tools</strong>
+            Power BI, Tableau, Excel (Advanced)
+          </div>
+          <div class="skill-category">
+            <strong>Data Skills</strong>
+            Data Cleaning, Trend Analysis, Data Visualization, Customer Segmentation, KPI Tracking
+          </div>
+          <div class="skill-category" style="grid-column:1/-1;">
+            <strong>Ways of Working</strong>
+            Agile collaboration, sprint planning, cross-functional teamwork, FigJam
+          </div>
+        </div>
+      </div>
+
+      <div class="download-section">
+        <a href="images/Isaac_Olaniyi_Resume.pdf" download="Isaac_Olaniyi_Resume" class="btn btn-primary">Download Resume (PDF)</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© 2026 Isaac Olaniyi. Built with care for data.</span>
+    <span>olaniyiisaac142@gmail.com</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

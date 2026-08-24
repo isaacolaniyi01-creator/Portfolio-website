@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Superstore Sales Performance &amp; Regional Profitability Analysis | Isaac Olaniyi</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav id="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">I. <span>Olaniyi</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="resume.html" class="btn-pill">Resume</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap project-title-block">
+  <a href="portfolio.html" class="back-link">← All Projects</a>
+  <span class="eyebrow">Retail Analysis</span>
+  <h1>Superstore Sales Performance &amp; Regional Profitability Analysis</h1>
+  <p>Four years of transactional data, mapped for growth trends, discount impact, and regional profitability.</p>
+</div>
+
+<div class="project-detail-container">
+  <div class="hero-media">
+    <iframe src="https://docs.google.com/presentation/d/1M7fbofYz6aDUq14gLLrZNU7BcVRCMWq4pIlfcVNU__A/embed?start=true&loop=true&delayms=4000&rm=minimal" allowfullscreen="allowfullscreen" allow="autoplay"></iframe>
+  </div>
+
+  <div class="project-content">
+    <section class="section" id="storytelling">
+      <h2>Project Overview</h2>
+      <p>This analysis examines the Superstore dataset over a four-year period to identify the primary drivers of sales growth and regional profit margins. Rather than focusing on visual presentation alone, this study prioritizes analytical integrity by verifying operational assumptions against the data, identifying macro trends, and translating transactional numbers into actionable business insights.</p>
+
+      <h3>1. Total Sales Growth</h3>
+      <p>The first step of the analysis involved tracking total sales over a four-year period to identify macro trends. The data revealed a clear, upward trajectory in revenue distribution rather than flat or erratic performance.</p>
+      <p><strong>The Velocity Shift:</strong> In 2023, annual sales accounted for 21% of the total revenue recorded across the timeframe. By 2026, that footprint expanded to 32%.<br>
+      <strong>The Insight:</strong> This baseline shift proves that the business was actively gaining momentum over the four years. For any operation, a trend like this indicates that inventory management and resource allocation need to proactively shift to keep pace with accelerating volume.</p>
+
+      <h3>2. Discount Impact: Assessing Profit Margin Neutrality</h3>
+      <p>A common assumption in retail operations is that aggressive promotional strategies and price cuts are necessary to engineer volume and protect market share. This analysis explicitly tested whether regional profit margins experienced a true statistical dependence on discount levels.</p>
+      <p><strong>The Finding:</strong> The data completely busted that assumption. Discount rates showed zero statistical correlation with regional profitability.<br>
+      <strong>The Proof:</strong> A close look at the data showed that both the highest-performing regions and the lowest-performing regions shared an almost identical average discount rate.<br>
+      <strong>The Insight:</strong> This proves that lowering prices is not the mechanism driving regional success or profitability here. If a territory is experiencing margin leaks, it is not due to promotional markdown strategies. Instead, the focus must shift to deeper operational variables, such as local supply chain efficiency, shipping overhead, or localized product mix mismatches.</p>
+
+      <h3>3. Regional Sales and Profit Performance</h3>
+      <p>Looking only at global, aggregated totals can mask critical patterns. Segmenting the data geographically exposed three distinct regional storylines:</p>
+      <ul>
+        <li><strong>The Western Region:</strong> The Western region emerged as the primary driver of performance across the ecosystem, securing the highest overall volume with 0.74M in total sales. More importantly, it didn't just sell more, its profit margins steadily climbed right alongside its sales expansion, establishing it as the most operationally stable model in the data.</li>
+        <li><strong>The Central Region:</strong> Evaluating the Central region solely on its final profit numbers might lead to an incorrect conclusion of underperformance. However, context is vital: in 2023, the Central region started from a tiny 1% baseline. Its movement up to 0.50M in total sales actually represents a massive 18% overall baseline increase, signaling a steady structural recovery rather than stagnation.</li>
+        <li><strong>The Southern Region:</strong> The Southern region presents the primary operational bottleneck in the dataset. It sustained a lower growth margin throughout the four-year window, causing it to fall behind the other territories and close out 2026 with the lowest overall sales at 0.39M. Because the discount analysis already proved that promotional pricing is neutral, the South's low performance points directly toward local operational friction or margin caps.</li>
+      </ul>
+
+      <h3>Methodological Note on Process Integrity</h3>
+      <p>This documented analysis prioritizes the integrity of the process over superficial presentation. By subjecting operational assumptions (like the discount theory) to statistical scrutiny and contextualizing trends against historical baselines (like the Central region's 1% starting point), the analysis converts raw data into structured operational intelligence.</p>
+    </section>
+
+    <section class="section" id="formulas">
+      <h2>Regional Sales and Profit Breakdown</h2>
+      <div style="display:flex;flex-direction:column;gap:2.5em;">
+        <div style="display:flex;flex-wrap:wrap;gap:2em;">
+          <div style="flex:1 1 320px;min-width:280px;">
+            <h4>Regional Total Sales</h4>
+            <div class="table-wrapper">
+            <table class="results-table">
+              <thead><tr><th>Year</th><th>Central</th><th>East</th><th>South</th><th>West</th></tr></thead>
+              <tbody>
+                <tr><td>2023</td><td>103,838.16</td><td>135,439.83</td><td>103,845.84</td><td>150,916.37</td></tr>
+                <tr><td>2024</td><td>102,874.22</td><td>157,071.42</td><td>71,359.98</td><td>141,687.41</td></tr>
+                <tr><td>2025</td><td>148,604.69</td><td>182,749.87</td><td>93,610.22</td><td>188,968.79</td></tr>
+                <tr><td>2026</td><td>147,853.60</td><td>216,567.04</td><td>122,905.86</td><td>258,241.03</td></tr>
+              </tbody>
+            </table>
+            </div>
+          </div>
+          <div style="flex:1 1 320px;min-width:280px;">
+            <h4>Regional Sales (%)</h4>
+            <div class="table-wrapper">
+            <table class="results-table">
+              <thead><tr><th>Year</th><th>Central</th><th>East</th><th>South</th><th>West</th></tr></thead>
+              <tbody>
+                <tr><td>2023</td><td>20.64%</td><td>19.58%</td><td>26.51%</td><td>20.40%</td></tr>
+                <tr><td>2024</td><td>20.45%</td><td>22.70%</td><td>18.22%</td><td>19.15%</td></tr>
+                <tr><td>2025</td><td>29.53%</td><td>26.42%</td><td>23.90%</td><td>25.54%</td></tr>
+                <tr><td>2026</td><td>29.38%</td><td>31.30%</td><td>31.38%</td><td>34.91%</td></tr>
+              </tbody>
+            </table>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:2em;">
+          <div style="flex:1 1 320px;min-width:280px;">
+            <h4>Regional Total Profit</h4>
+            <div class="table-wrapper">
+            <table class="results-table">
+              <thead><tr><th>Year</th><th>Central</th><th>East</th><th>South</th><th>West</th></tr></thead>
+              <tbody>
+                <tr><td>2023</td><td>539.55</td><td>19,011.14</td><td>11,879.12</td><td>20,254.48</td></tr>
+                <tr><td>2024</td><td>11,716.80</td><td>21,189.05</td><td>8,318.59</td><td>20,796.52</td></tr>
+                <tr><td>2025</td><td>20,036.76</td><td>20,602.63</td><td>17,702.81</td><td>24,323.00</td></tr>
+                <tr><td>2026</td><td>7,572.19</td><td>34,080.43</td><td>8,848.91</td><td>45,424.81</td></tr>
+              </tbody>
+            </table>
+            </div>
+          </div>
+          <div style="flex:1 1 320px;min-width:280px;">
+            <h4>Regional Profit (%)</h4>
+            <div class="table-wrapper">
+            <table class="results-table">
+              <thead><tr><th>Year</th><th>Central</th><th>East</th><th>South</th><th>West</th></tr></thead>
+              <tbody>
+                <tr><td>2023</td><td>1.35%</td><td>20.04%</td><td>25.41%</td><td>18.28%</td></tr>
+                <tr><td>2024</td><td>29.39%</td><td>22.33%</td><td>17.79%</td><td>18.77%</td></tr>
+                <tr><td>2025</td><td>50.26%</td><td>21.71%</td><td>37.87%</td><td>21.95%</td></tr>
+                <tr><td>2026</td><td>18.99%</td><td>35.92%</td><td>18.93%</td><td>41.00%</td></tr>
+              </tbody>
+            </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="findings">
+      <h2>Key Findings</h2>
+      <ol class="findings">
+        <li>Annual sales shifted upward, moving from 21% of the total revenue in 2023 to 32% in 2026</li>
+        <li>Discount rates showed no impact on regional profitability, both high and low-performing areas share an identical average discount</li>
+        <li>The Western region showed the most significant increase in sales, locking in the highest performance in 2026</li>
+        <li>The Southern region sustained a lower growth margin, resulting in the lowest overall sales in 2026</li>
+        <li>Profit margin grew steadily in the Western region, marking it as the top-performing region in profit</li>
+        <li>Profit margin grew slowly in the Central region, recording an overall increase of 18%</li>
+      </ol>
+    </section>
+
+    <section class="section" id="actions">
+      <h2>Recommended Actions</h2>
+      <ol class="recommendations">
+        <li><strong>Study the Western region's methods to help lower-performing areas:</strong> Analyzing what makes the West successful could provide actionable strategies to boost sales in lagging areas like the South.</li>
+        <li><strong>Factor in the Central region's low starting point:</strong> Because the Central region started at a low 1% baseline in 2023, its slow growth should be viewed as a steady recovery rather than poor performance.</li>
+        <li><strong>Review the discounting strategy since it does not affect profit:</strong> Since the data shows discounts have no real impact on regional profitability, shifting that budget into targeted local marketing may yield better results.</li>
+        <li><strong>Examine why the Southern region's sales remained low:</strong> Looking into local supply chains, costs, or product mixes in the South could reveal what capped its margins and caused the lowest overall sales by 2026.</li>
+        <li><strong>Shift resources toward high-growth territories:</strong> To make the most of total annual sales climbing from 21% to 32% of total revenue, inventory and marketing budgets should be directed toward the regions showing the strongest momentum.</li>
+      </ol>
+    </section>
+
+    <div class="download-cta">
+      <a href="https://drive.google.com/uc?export=download&id=1sVX2Vmc4ttDQ0e5R5tOWdRGJU2RQPfF1" class="btn btn-primary" download>Download Full Superstore Analysis Dashboard (.pbix)</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© 2026 Isaac Olaniyi. Built with care for data.</span>
+    <span>olaniyiisaac142@gmail.com</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

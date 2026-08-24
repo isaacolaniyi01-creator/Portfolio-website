@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>This Portfolio Website | Isaac Olaniyi</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav id="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">I. <span>Olaniyi</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="resume.html" class="btn-pill">Resume</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap project-title-block">
+  <a href="portfolio.html" class="back-link">← All Projects</a>
+  <span class="eyebrow">Web Design &amp; Development</span>
+  <h1>This Portfolio Website</h1>
+  <p>A responsive, multi-page personal site built from scratch, and the one you're using right now.</p>
+</div>
+
+<div class="project-detail-container">
+  <div class="project-content">
+    <section class="section" style="border-top:none;padding-top:24px;">
+      <h2>Overview</h2>
+      <p>This site is built with plain HTML, CSS, and JavaScript, no framework, no build step. The goal was a fast, clean, content-first design that gives two different disciplines (data analytics and web development) their own space under one consistent visual system.</p>
+    </section>
+
+    <section class="section">
+      <h2>What's under the hood</h2>
+      <div class="insight-card">
+        <ul class="metrics-list" style="margin:0;">
+          <li><strong>Structure:</strong> Multi-page static site (Home, Portfolio, Resume, individual project case studies) linked through a shared nav and footer.</li>
+          <li><strong>Styling:</strong> A single hand-written stylesheet using CSS custom properties for color, spacing, and radius, so the whole look can be re-themed from one place.</li>
+          <li><strong>Typography:</strong> Space Grotesk for headings, Inter for body text, and JetBrains Mono for data callouts and labels, a pairing chosen to fit an analytics-and-code identity.</li>
+          <li><strong>Interactivity:</strong> Vanilla JavaScript for the mobile nav toggle, expandable bio text, and the contact form's submit state, no framework needed for this scale.</li>
+          <li><strong>Responsive design:</strong> A fluid grid layout that reflows from a multi-column desktop view down to a single-column mobile view, with a collapsible nav menu below 800px.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Design decisions</h2>
+      <p>Rather than using a template, every section, the hero, the interest cards, the project grid, was custom-built to keep the layout consistent and lightweight. Icons are inline SVG rather than an icon font or emoji, which keeps them crisp at any size and themeable with CSS.</p>
+    </section>
+
+    <section class="section" id="tech">
+      <h2>Tech Stack</h2>
+      <div class="tech-list">
+        <span class="tech-item">HTML5</span>
+        <span class="tech-item">CSS3 (Custom Properties)</span>
+        <span class="tech-item">Vanilla JavaScript</span>
+        <span class="tech-item">Responsive Design</span>
+        <span class="tech-item">Google Fonts</span>
+        <span class="tech-item">GitHub Pages</span>
+      </div>
+    </section>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© 2026 Isaac Olaniyi. Built with care for data.</span>
+    <span>olaniyiisaac142@gmail.com</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

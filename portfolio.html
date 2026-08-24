@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portfolio | Isaac Olaniyi</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav id="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">I. <span>Olaniyi</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="portfolio.html" class="current">Portfolio</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="resume.html" class="btn-pill">Resume</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <header class="page-header">
+    <div class="wrap">
+      <span class="eyebrow">Portfolio</span>
+      <h1>All Projects</h1>
+      <p>Data analytics case studies and web development work. The analytics projects are independent practice on public Kaggle datasets, not client or employer work.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="wrap">
+
+      <div class="portfolio-category" id="data-projects">
+        <div class="portfolio-category-head">
+          <div>
+            <span class="eyebrow"><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="20" x2="4" y2="12"/><line x1="10" y1="20" x2="10" y2="7"/><line x1="16" y1="20" x2="16" y2="4"/><line x1="22" y1="20" x2="22" y2="14"/></svg> Data Analytics</span>
+            <h2>Projects</h2>
+          </div>
+        </div>
+        <div class="project-grid">
+
+          <a class="project-card" href="project-ecommerce.html">
+            <div class="project-thumb"><img src="images/thumbs/superstore.jpg" alt="Superstore sales dashboard preview" /></div>
+            <div class="project-body">
+              <span class="project-tag">Retail Analysis</span>
+              <h3>Superstore Sales Performance &amp; Regional Profitability Analysis</h3>
+              <p>Four years of transactional data, mapped for growth trends, discount impact, and regional profitability.</p>
+              <span class="project-arrow">Read the analysis →</span>
+            </div>
+          </a>
+
+          <a class="project-card" href="project-abtest.html">
+            <div class="project-thumb"><img src="images/thumbs/abtest.jpg" alt="A/B test results preview" /></div>
+            <div class="project-body">
+              <span class="project-tag">Marketing Experimentation</span>
+              <h3>Marketing Campaign A/B Test Evaluation (SQL Project)</h3>
+              <p>A Chi-Square test across 588,101 users proving the ad campaign drove a real, statistically significant lift.</p>
+              <span class="project-arrow">Read the analysis →</span>
+            </div>
+          </a>
+
+          <a class="project-card" href="project-churn.html">
+            <div class="project-thumb placeholder">
+              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 3v18h18"/><path d="M7 15l4-6 3 4 5-8"/></svg>
+            </div>
+            <div class="project-body">
+              <span class="project-tag">Customer Analytics</span>
+              <h3>Customer Demographics &amp; Churn Analysis</h3>
+              <p>Tracing customer cohorts and behaviors to understand what drives churn and where to invest in retention.</p>
+              <span class="status-chip" style="margin-top:14px;display:inline-block;">Early-stage write-up</span>
+            </div>
+          </a>
+
+          <a class="project-card" href="project-employee.html">
+            <div class="project-thumb placeholder">
+              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c0-4 3-6.5 7-6.5s7 2.5 7 6.5"/></svg>
+            </div>
+            <div class="project-body">
+              <span class="project-tag">HR Analytics</span>
+              <h3>Employee Retention &amp; Attrition Analysis</h3>
+              <p>Identifying which roles, tenure ranges, and management changes correlate with employee turnover.</p>
+              <span class="status-chip" style="margin-top:14px;display:inline-block;">Early-stage write-up</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <div class="portfolio-category" id="web-projects">
+        <div class="portfolio-category-head">
+          <div>
+            <span class="eyebrow"><svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg> Web Design &amp; Development</span>
+            <h2>Projects</h2>
+          </div>
+        </div>
+        <div class="project-grid">
+
+          <a class="project-card" href="project-webportfolio.html">
+            <div class="project-thumb"><img src="images/thumbs/webportfolio-preview.png" alt="This portfolio website homepage preview" /></div>
+            <div class="project-body">
+              <span class="project-tag">Personal Site</span>
+              <h3>This Portfolio Website</h3>
+              <p>A responsive, multi-page site built from scratch with semantic HTML, custom CSS, and vanilla JS, the one you're looking at right now.</p>
+              <span class="project-arrow">See how it's built →</span>
+            </div>
+          </a>
+
+          <div class="coming-soon-card">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 3"/></svg>
+            <p style="margin:0;font-size:.9em;">More web projects coming soon</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© 2026 Isaac Olaniyi. Built with care for data.</span>
+    <span>olaniyiisaac142@gmail.com</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

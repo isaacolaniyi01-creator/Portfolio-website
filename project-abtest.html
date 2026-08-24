@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Marketing Campaign A/B Test Evaluation | Isaac Olaniyi</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav id="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">I. <span>Olaniyi</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="resume.html" class="btn-pill">Resume</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap project-title-block">
+  <a href="portfolio.html" class="back-link">← All Projects</a>
+  <span class="eyebrow">Marketing Experimentation</span>
+  <h1>Marketing Campaign A/B Test Evaluation</h1>
+  <p>A Chi-Square test across 588,101 users proving the ad campaign drove a real, statistically significant lift.</p>
+</div>
+
+<div class="project-detail-container">
+  <div class="hero-media">
+    <iframe src="https://docs.google.com/presentation/d/1PhqepcUbbCa_OYAYAIbiZD9W6WbTuJtN7qJeRFWtKk4/embed?start=true&loop=true&delayms=3000&rm=minimal" allowfullscreen="allowfullscreen" allow="autoplay"></iframe>
+  </div>
+
+  <div class="project-content">
+    <section class="section">
+      <h2>Introduction</h2>
+      <p>Every digital business faces a critical question: <em>are our active marketing campaigns actually driving new revenue, or are we just paying for conversions that would have happened naturally?</em></p>
+      <p>To find out, this project analyzed an enterprise marketing dataset spanning <strong>588,101 unique users</strong>. The goal was twofold:</p>
+      <ol class="challenge-list">
+        <li>Run a rigorous statistical audit to prove if the active ad campaign outperformed the baseline control group.</li>
+        <li>Mine the data to find the exact days and hours when marketing spend yields the absolute highest return.</li>
+      </ol>
+    </section>
+
+    <hr class="section-divider" />
+
+    <section class="section" style="border-top:none;padding-top:0;">
+      <h2>Technical Breakdown &amp; Core Insights</h2>
+
+      <div class="insight-card">
+        <h3 style="margin-top:0;">1. The Experimental Proof (Does the Campaign Actually Work?)</h3>
+        <p>Because we were analyzing categorical outcomes (whether a user converted or not across different groups), we ran a <strong>Chi-Square Test of Independence</strong> to check for true statistical significance.</p>
+        <p>The dataset was broken into a massive treatment group and a smaller, tight control group:</p>
+        <ul class="metrics-list">
+          <li><strong>The Active Ad Group (Treatment):</strong> 564,577 users were exposed to creative marketing. From this group, 14,423 users converted, resulting in a 2.55% conversion rate.</li>
+          <li><strong>The PSA Control Group (Control):</strong> 23,524 users were shielded from marketing and only saw public service announcements. Within this baseline group, 420 users converted, resulting in a 1.78% conversion rate.</li>
+        </ul>
+        <p>While a jump from 1.78% to 2.55% might look subtle at first glance, across more than half a million users, this lift is massive. The Chi-Square test safely rejected the null hypothesis, proving that the active ad creatives generated thousands of clear, incremental conversions that would not have happened on their own.</p>
+      </div>
+
+      <div class="insight-card">
+        <h3 style="margin-top:0;">2. The Exposure Frequency Threshold</h3>
+        <p>When we looked at how often users were exposed to platform content, a massive behavioral threshold came to light:</p>
+        <ul class="metrics-list">
+          <li><strong>Non-converted users</strong> averaged a mere 23.27 views before dropping off.</li>
+          <li><strong>Converted users</strong> exhibited a huge behavioral leap, averaging 83.91 views before buying.</li>
+        </ul>
+        <p>Interestingly, highly active users in the PSA control group also hit a high baseline frequency (83.28 views), but their absolute conversion volume completely flatlined compared to the active ad group.</p>
+        <blockquote class="takeaway-quote"><strong>The Takeaway:</strong> Casual, single-exposure ad placements are a waste of money. Consumers require consistent, high-frequency visibility to cross the consideration threshold.</blockquote>
+      </div>
+
+      <div class="insight-card">
+        <h3 style="margin-top:0;">3. Engagement Peak Hours &amp; Day-of-Week Behavioral Shifts</h3>
+        <p>Most marketing teams look at platform averages and assume traffic peaks uniformly every single afternoon. By isolating and ranking the absolute top performance hour for every single day of the week, we completely shattered the uniform traffic myth and exposed a rolling, day-type pattern:</p>
+        <ul class="temporal-list">
+          <li><strong>The Midweek Intent Window (Mon–Wed @ 12:00 PM):</strong> Driven by high-intent lunch-hour users. Monday stands out as an incredibly efficient conversion engine, pulling in the highest volume of actual conversions (231 orders) despite having lower relative traffic volume than the weekend.</li>
+          <li><strong>The Weekend Reach Window (Fri–Sat @ 1:00 PM):</strong> Friday acts as the absolute raw traffic peak of the entire dataset, drawing in a massive audience of 7,494 users at 1:00 PM. While fantastic for broad brand awareness and maximizing campaign reach, conversion velocity slows down here, meaning people are browsing heavily but purchasing less urgently.</li>
+          <li><strong>The Transitional Afternoons (Sun &amp; Thu @ 2:00 PM):</strong> On these specific bridge days, audience momentum starts slow and delays even later into the afternoon, pushing the peak engagement window to 2:00 PM (where Sunday hits a late wave of 7,236 users).</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Formulas</h2>
+      <details class="sql-appendix">
+        <summary class="appendix-trigger">
+          <span>View Technical Implementation (SQL &amp; Results)</span>
+          <span>▼</span>
+        </summary>
+        <div class="appendix-content">
+          <h4>MySQL Optimization Query</h4>
+          <pre><code>-- Isolating the absolute peak engagement hour per day of the week
+WITH HourlyEngagement AS (
+    SELECT 
+        most_ads_day AS day_of_week,
+        most_ads_hour AS peak_hour,
+        COUNT(user_id) AS total_reach,
+        SUM(CASE WHEN converted = TRUE THEN 1 ELSE 0 END) AS conversions,
+        ROW_NUMBER() OVER (
+            PARTITION BY most_ads_day 
+            ORDER BY COUNT(user_id) DESC
+        ) AS engagement_rank
+    FROM marketing_campaign_logs
+    GROUP BY most_ads_day, most_ads_hour
+)
+SELECT 
+    day_of_week,
+    peak_hour,
+    total_reach,
+    conversions
+FROM HourlyEngagement
+WHERE engagement_rank = 1
+ORDER BY FIELD(day_of_week, 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');</code></pre>
+          <h4>Query Output Grid</h4>
+          <div class="table-wrapper">
+            <table class="results-table">
+              <thead><tr><th>day_of_week</th><th>peak_hour</th><th>total_reach</th><th>conversions</th></tr></thead>
+              <tbody>
+                <tr><td>Monday</td><td>12:00 PM</td><td>7,002</td><td>231</td></tr>
+                <tr><td>Tuesday</td><td>12:00 PM</td><td>6,861</td><td>208</td></tr>
+                <tr><td>Wednesday</td><td>12:00 PM</td><td>7,305</td><td>184</td></tr>
+                <tr><td>Thursday</td><td>2:00 PM</td><td>6,866</td><td>175</td></tr>
+                <tr><td>Friday</td><td>1:00 PM</td><td>7,494</td><td>169</td></tr>
+                <tr><td>Saturday</td><td>1:00 PM</td><td>6,294</td><td>129</td></tr>
+                <tr><td>Sunday</td><td>2:00 PM</td><td>7,236</td><td>145</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="section" id="findings">
+      <h2>Key Findings</h2>
+      <ol class="findings">
+        <li><strong>The ads completely crushed the baseline.</strong> Showing users actual ads pushed the conversion rate up to 2.56%, compared to just 1.79% for the people who only saw a neutral PSA.</li>
+        <li><strong>The analysis revealed a massive 43.14% performance lift.</strong> This means for every 100 people who would have naturally bought something anyway, the ad campaign successfully brought in an extra 43 conversions.</li>
+        <li><strong>The results are mathematically bulletproof.</strong> A Chi-Square test gave us a p-value of 0.000 (1.705 × 10⁻¹³). The odds of this performance spike being a random fluke are practically zero, we have 99.99% statistical certainty that the ads directly caused the jump.</li>
+        <li><strong>The data is incredibly stable and clean.</strong> Because we analyzed a massive sample size of over 588,000 users, the standard error is microscopic (0.021% for the ad group). This proves our conversion numbers are solid and entirely free from random data noise.</li>
+        <li><strong>Conversions are driven by repeated exposure.</strong> People who actually bought something saw a drastically higher average number of ads than those who didn't. One-off ad views didn't do the trick, brand consistency is what nudged users to act.</li>
+        <li><strong>Engagement hits its stride in a specific afternoon window.</strong> Traffic doesn't hit the platform evenly throughout the day. By tracking the weekly timeline, we isolated clear performance waves, specifically finding that audience reach and engagement climb heavily into a peak daily window between 12 PM and 2 PM.</li>
+      </ol>
+    </section>
+
+    <section class="section" id="actions">
+      <h2>Recommended Actions</h2>
+      <ol class="recommendations">
+        <li><strong>Shift budget entirely to the active ad framework:</strong> The neutral PSA baseline should be discontinued. This transition is justified by the verified 43.14% relative lift in conversion performance across the treatment group.</li>
+        <li><strong>Optimize ad scheduling for the afternoon window:</strong> Budget allocation should be heavily concentrated between 12 PM and 2 PM. Standard, uniform daily ad distribution should be replaced with targeted scheduling during this high-engagement traffic window.</li>
+        <li><strong>Prioritize repeated ad exposure over single views:</strong> Since user conversions increase with repeated exposure rather than one-off views, delivery settings must focus on showing the ad multiple times. Single-exposure placements should be avoided to prevent wasted spend.</li>
+      </ol>
+    </section>
+
+    <div class="download-cta">
+      <a href="https://www.dropbox.com/scl/fi/7preysn6znuxqylpf74yb/marketing-ab-test-clean.7z?rlkey=0cjn8s3d7vmw5xkc3m463lcoo&st=isxlzz28&dl=1" class="btn btn-primary">Download Full Marketing A/B Test Dashboard</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© 2026 Isaac Olaniyi. Built with care for data.</span>
+    <span>olaniyiisaac142@gmail.com</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
